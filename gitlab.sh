@@ -27,7 +27,7 @@ sudo pip install docker-compose
 	################     Updating host and ufw                ###################
 	
 sudo hostname 'docker.example.com'
-echo "127.0.1.1 10.154.128.50 docker.example.com" | sudo tee -a /etc/hosts
+echo "127.0.1.1 10.154.128.53 docker.example.com" | sudo tee -a /etc/hosts
 sudo ufw enable -y
 sudo sed -i 's|DEFAULT_FORWARD_POLICY="DROP"|DEFAULT_FORWARD_POLICY="ACCEPT"|g' /etc/default/ufw
 sudo ufw reload
@@ -47,7 +47,7 @@ sudo mkdir -p /var/opt/gitlab
    
 sudo docker run --detach \
     --hostname gitlab.example.com \
-    --env GITLAB_OMNIBUS_CONFIG="external_url 'http://10.154.128.50/'; gitlab_rails['lfs_enabled'] = true;" \
+    --env GITLAB_OMNIBUS_CONFIG="external_url 'http://10.154.128.53/'; gitlab_rails['lfs_enabled'] = true;" \
     -p 443:443 -p80:80 -p 10022:22 -e "GITLAB_SHELL_SSH_PORT=10022" \
     --name gitlab \
     --restart always \

@@ -28,3 +28,5 @@ sudo apt-get update -y
 sudo apt-get install ruby2.3 -y
 sudo gem install serverspec rake
 
+##### Installing git
+sudo apt-get install git -y
