@@ -21,12 +21,11 @@ Vagrant.configure(2) do |config|
 		
 			config.vm.provider "virtualbox" do |v|
 				v.cpus = 2
-				v.memory = 1024
+				v.memory = 2048
 			end
         node.vm.network "private_network", ip: "10.154.128.52"
 		node.vm.provision :shell, path: "node.sh"
     end
-	
 	config.vm.define "scm" do |scm|
         scm.vm.box = "ubuntu/trusty64"
 		
