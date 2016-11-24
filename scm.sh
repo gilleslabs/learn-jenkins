@@ -25,8 +25,9 @@ sudo apt-get install jenkins -y
 sudo apt-get install software-properties-common -y
 sudo apt-add-repository ppa:brightbox/ruby-ng -y
 sudo apt-get update -y
-sudo apt-get install ruby2.3 -y
+sudo apt-get install ruby2.3 ruby2.3-dev gcc make -y
 sudo gem install serverspec rake
+sudo gem install inspec
 
 ##### Installing git
 sudo apt-get install git -y
